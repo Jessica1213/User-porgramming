@@ -2,10 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="CSSFiles/LoginCSS.css">
     <title>Flying Dutchman</title>
-    <h1>Welcome!!!!!))</h1>
+    <h3>WELCOME TO</h3><h1><i>The Flying Dutchman</i></h1>
+    <script src="javascriptfiles/Login.js"></script>
 </head>
 <body>
+    <form name="LoginForm" action="http://pub.jamaica-inn.net/fpdb/api.php?username=jorass&password=jorass&action=iou_get">
+        <input type="text" id="username" name="username" value="Username" onfocus="this.value=''"><br>
+        <input type="text" id="password" name="password" value="Password" onfocus="this.value=''"><br>
+        <input type="submit" value="Log in">
+    </form>
 
 </body>
 </html>
