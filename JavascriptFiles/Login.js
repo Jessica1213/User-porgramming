@@ -31,6 +31,7 @@ function f1(){
             myFunction(xmlhttp.responseText);
         }
     }
+    
     xmlhttp.open("GET", url, true);
     xmlhttp.send();
 }
