@@ -1,0 +1,45 @@
+#FirstTitle{
+
+    margin-left: 70px;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 2px #666666;
+}
+
+.beer{
+    border: 3px solid black;
+    height: 150px;
+    width: 700px;
+    Padding: 10px;
+    margin-left: 30px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.beerImage{
+    border: 0.5px solid black;
+    height: 130px;
+    width: 100px;
+    float: left;
+    margin: 10px;
+    position: absolute;
+}
+
+.beerInfo{
+    border: 0.5px solid black;
+    height: 130px;
+    width: 500px;
+    font-size: medium;
+    margin-left: 120px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    position: absolute;
+}
+
+.beerPrice{
+    border: 0px solid black;
+    font-size: large;
+    color: darkblue;
+    margin-left: 630px;
+    margin-top:60px;
+    position:absolute;
+}
