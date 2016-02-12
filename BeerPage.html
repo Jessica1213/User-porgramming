@@ -2,13 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Choose your favorite beers</title>
+    <title>Flying Dutchman</title>
     <link rel="stylesheet" href="CSSFiles/BeerCSS.css">
-    <script src="javascriptfiles/BeerPageDrag.js"></script>
+    <script type="text/javascript" src="javascriptfiles/BeerPageDrag.js"></script>
+    <script type="text/javascript" src="javascriptfiles/beerpage_language.js"></script>
+    <h4><span id="Beertitle"></span></h4>
 </head>
+
 <body>
+<h1 id="FirstTitle"><span id="Title"></span></h1>
 
 <header><h3>The Flying Dutchman</h3></header>
+
+<div id="languagebar">
+    <input type="button" onclick="change_lang(0)">en&nbsp;
+    <input type="button" onclick="change_lang(1)">se&nbsp;
+</div>
 
 <div class="beer">
     <table id = "beerTable">
@@ -55,6 +64,6 @@
 </div>
 -->
 
-
+<script>change_lang(0)</script>
 </body>
 </html>
