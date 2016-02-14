@@ -12,25 +12,24 @@ function change_lang(lan_index)
             break;
     }
     document.getElementById('Welcome').innerHTML = myLangArray[0];
-    document.getElementById('Flyingdutchman').innerHTML = myLangArray[1];
-    document.getElementById('Login').innerHTML = myLangArray[2];
-    //document.getElementById('Beerpagetitle').innerHTML = myLangArray[3];
+
+    document.getElementById('Login').innerHTML = myLangArray[1];
+
+    document.getElementById('loginButton').innerHTML = myLangArray[2];
 
 }
 
 
 //English
 Lang_en = new Array();
-Lang_en[0] = "WELCOME TO";
-Lang_en[1] = "The Flying Dutchman";
-Lang_en[2] = "Please login first";
-//Lang_en[3] = "Please choose your favorite beers";
+Lang_en[0] = "Welcome to The Flying Dutchman";
+Lang_en[1] = "Please login first";
+Lang_en[2] = "Log in";
 
 
 //Swedish
 Lang_se = new Array();
-Lang_se[0] = "Välkomna";
-Lang_se[1] = "The Flying Dutchman";
-Lang_se[2] = "Snälla logga in först";
-//Lang_se[3] = "Välj din favorit öl";
+Lang_se[0] = "Välkomna till The Flying Dutchman";
+Lang_se[1] = "Snälla logga in först";
+Lang_se[2] = "Logga in";
 

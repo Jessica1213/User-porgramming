@@ -1,11 +1,28 @@
 body {
-    background-color: lightgrey;
+
+    background: url("images/Flying_Dutchman.jpg") no-repeat center center fixed;
+    background-color: #adb9a1;
+    background-image: url("images/Flying_Dutchman.jpg");
+    background-repeat: no-repeat;
+    max-width: 95%;
+    max-height: 95%;
+    background-size: auto;
+    background-position: right;
+}
+
+header{
+    background-color:black;
+    color:white;
+    text-align:center;
+    padding:5px;
 }
 
 h1 {
     color: black;
 }
 
-h3 {
-    color: darkred;
+#loginForm{
+    margin: 150px 200px;
+    width: 200px;
+
 }

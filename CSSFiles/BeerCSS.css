@@ -6,15 +6,58 @@
     text-shadow: 2px 2px 2px #666666;
 }
 
-.beer{
-    border: 3px solid black;
-    height: 150px;
-    width: 700px;
-    Padding: 10px;
-    margin-left: 30px;
-    margin-bottom: 20px;
-    position: relative;
+body{
+    background: url("images/Flying_Dutchman.jpg") no-repeat center center fixed;
+    background-color: #adb9a1;
+    background-repeat: no-repeat;
+    max-width: 95%;
+    max-height: 95%;
+    background-size: auto;
+    background-position: right;
 }
+
+header{
+    background-color:black;
+    color:white;
+    text-align:center;
+    padding:5px;
+}
+
+.beer{
+    border: 1.5px solid black;
+    background-color: lightgray;
+    width: 250px;
+    margin-top: 15px;
+    margin-left: 70px;
+    border-radius: 10px;
+    float: left;
+}
+
+#beerTable{
+    border: 1.5px solid black;
+    border-radius: 10px;
+
+}
+
+.beerName{
+    width: 150px;
+}
+
+.beerPrice{
+    width: 100px;
+}
+
+.menuRow{
+   height: 30px;
+   background-color: darkgray;
+}
+
+.menuRowEven{
+    height: 30px;
+    background-color: lightslategray;
+}
+
+
 
 .beerImage{
     border: 0.5px solid black;
@@ -26,21 +69,20 @@
 }
 
 .beerInfo{
-    border: 0.5px solid black;
-    height: 130px;
-    width: 500px;
+
+
+    width: 150px;
     font-size: medium;
-    margin-left: 120px;
-    margin-top: 10px;
-    margin-bottom: 10px;
     position: absolute;
 }
 
-.beerPrice{
-    border: 0px solid black;
-    font-size: large;
-    color: darkblue;
-    margin-left: 630px;
-    margin-top:60px;
-    position:absolute;
+#basket{
+    border: 1.5px solid black;
+    background-color: #c0c0b8;
+    width: 250px;
+    margin-left: 35px;
+    margin-top: 15px;
+    float: left;
+    border-radius: 10px;
+    padding: 25px;
 }
