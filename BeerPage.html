@@ -4,32 +4,35 @@
     <meta charset="UTF-8">
     <title>Flying Dutchman</title>
     <link rel="stylesheet" href="CSSFiles/BeerCSS.css">
+    <script type="text/javascript" src="javascriptfiles/Library/jquery-1.12.0.js"></script>
     <script type="text/javascript" src="javascriptfiles/BeerPageDrag.js"></script>
     <script type="text/javascript" src="javascriptfiles/beerpage_language.js"></script>
     <h4><span id="Beertitle"></span></h4>
 </head>
 
 <body>
-<h1 id="FirstTitle"><span id="Title"></span></h1>
 
-<header><h3>The Flying Dutchman</h3></header>
+
+<header><h2>The Flying Dutchman</h2></header>
 
 <div id="languagebar">
     <input type="button" onclick="change_lang(0)">en&nbsp;
     <input type="button" onclick="change_lang(1)">se&nbsp;
 </div>
-
+<h1 id="FirstTitle"><span id="Title"></span></h1>
 <div class="beer">
     <table id = "beerTable">
-        <tr class="menuRow" id="beer1" draggable="true" ondragstart="drag(event)">
-            <td class="beerName">BEER1</td>
+        <tr class="menuRow" id="beer1" onmouseover="mouseOverForDrag()" draggable="true" ondragstart="drag(event)">
+            <td class="beerName"><span title="Infooooooo">BEER1</span></td>
             <td class="beerPrice">80 SEK</td>
         </tr>
-        <tr class="menuRowEven" id="beer2" draggable="true" ondragstart="drag(event)">
+
+        <tr class="menuRowEven" id="beer2" draggable="true" ondragstart="drag(event)"><!--TODO: onmouseover, infoooo-->
             <td class="beerName">BEER2</td>
             <td class="beerPrice">80 SEK</td>
         </tr>
-        <tr class="menuRow" id="beer3" draggable="true" ondragstart="drag(event)">
+
+        <tr class="menuRow" id="beer3" draggable="true" ondragstart="drag(event)"><!--TODO: onmouseover, infoooo-->
             <td class="beerName">BEER3</td>
             <td class="beerPrice">80 SEK</td>
         </tr>
@@ -49,6 +52,8 @@
     <img src="img_w3slogo.gif" draggable="true" ondragstart="drag(event)" id="drag1" width="88" height="31">
 </div>
 -->
+
+
 <div id="basket" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
 <!-- beer1
