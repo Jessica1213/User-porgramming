@@ -7,21 +7,24 @@
     <script type="text/javascript" src="javascriptfiles/Login.js"></script>
     <script type="text/javascript" src="javascriptfiles/login_language.js"></script>
     <title>Flying Dutchman</title>
-    <h3><span id="Welcome"></span></h3><h1><i><span id="Flyingdutchman"></span></i></h1>
+
 </head>
 <body>
-<header><h2>Welcome to The Flying Dutchman</h2></header>
+<header><h2 id = "Welcome">Welcome to The Flying Dutchman</h2></header>
 <div id="languagebar">
     <input type="button" onclick="change_lang(0)">en&nbsp;
     <input type="button" onclick="change_lang(1)">se&nbsp;
 </div>
 
+
+<div id="loginForm">
 <p id="id01"><span id="Login"></span></p>
 <form name="LoginForm" action="">
     <input type="text" id="username" name="username" value="Username" onfocus="this.value=''"><br>
     <input type="text" id="password" name="password" value="Password" onfocus="this.value=''"><br>
 </form>
-<button onclick="f1()">click me</button>
+<button id="loginButton" onclick="f1()">Log in</button>
+</div>
 
 
 <script>change_lang(0)</script>
