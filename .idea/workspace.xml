@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cb81504b-7c8d-4d01-ba9f-c5431ab5ed85" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BeerPage.html" afterPath="$PROJECT_DIR$/BeerPage.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CSSFiles/BeerCSS.css" afterPath="$PROJECT_DIR$/CSSFiles/BeerCSS.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CSSFiles/LoginCSS.css" afterPath="$PROJECT_DIR$/CSSFiles/LoginCSS.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JavascriptFiles/BeerPageDrag.js" afterPath="$PROJECT_DIR$/JavascriptFiles/BeerPageDrag.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JavascriptFiles/login_language.js" afterPath="$PROJECT_DIR$/JavascriptFiles/login_language.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Loginpage.html" afterPath="$PROJECT_DIR$/Loginpage.html" />
-    </list>
+    <list default="true" id="cb81504b-7c8d-4d01-ba9f-c5431ab5ed85" name="Default" comment="" />
     <ignored path="User-porgramming.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,7 +24,7 @@
       <file leaf-file-name="Loginpage.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Loginpage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.53931206">
+            <state vertical-scroll-proportion="0.5405405">
               <caret line="25" column="39" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
               <folding />
             </state>
@@ -42,7 +34,7 @@
       <file leaf-file-name="BeerPage.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BeerPage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-19.205883">
+            <state vertical-scroll-proportion="0.0">
               <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
               <folding />
             </state>
@@ -116,7 +108,6 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-11" />
-    <option name="y" value="-11" />
     <option name="width" value="1924" />
     <option name="height" value="1042" />
   </component>
@@ -288,10 +279,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-11" y="-11" width="1924" height="1042" extended-state="1" />
-    <editor active="true" />
+    <frame x="-11" y="0" width="1924" height="1042" extended-state="0" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2502629" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2502629" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -684,7 +675,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/BeerPage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-19.205883">
+        <state vertical-scroll-proportion="0.0">
           <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
           <folding />
         </state>
@@ -692,7 +683,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Loginpage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.53931206">
+        <state vertical-scroll-proportion="0.5405405">
           <caret line="25" column="39" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
           <folding />
         </state>
