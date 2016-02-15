@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Flying Dutchman</title>
@@ -19,7 +19,12 @@
     <input type="button" onclick="change_lang(0)">en&nbsp;
     <input type="button" onclick="change_lang(1)">se&nbsp;
 </div>
-<h1 id="FirstTitle"><span id="Title"></span></h1>
+<div id="allergiFilter">
+    <input type="checkbox" name="glutenAllergi" value="gluten"><span id="glutenAllergi"></span><br>
+    <input type="checkbox" id="lactoseAllergi" name="lactoseAllergi" value="lactose"> lactose intolerance<br>
+    <input type="checkbox" id="nutAllergi" name="nutAllergi" value="nut"> nut allergi<br>
+    <input type="button" id="filterButton" name="filter" value="filter">
+</div>
 <div class="beer">
     <table id = "beerTable">
         <tr class="menuRow" id="beer1" onmouseover="mouseOverForDrag()" draggable="true" ondragstart="drag(event)">
@@ -54,7 +59,9 @@
 -->
 
 
-<div id="basket" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<div id="basket" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <table id = "basketList"></table>
+</div>
 
 <!-- beer1
 <div class="beer" >
