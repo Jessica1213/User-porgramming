@@ -11,11 +11,10 @@ function change_lang(lan_index)
             myLangArray = Lang_en;
             break;
     }
-    //document.getElementById('glutenAllergi').innerHTML = myLangArray[0];
-    $('#lactoseAllergi').val(myLangArray[0]);
+    document.getElementById('glutenAllergi').innerHTML = myLangArray[0];
     document.getElementById('lactoseAllergi').innerHTML = myLangArray[1];
     document.getElementById('nutAllergi').innerHTML = myLangArray[2];
-    document.getElementById('filterButton').innerHTML = myLangArray[3];
+    $('#filterButton').val(myLangArray[3]);
 
 }
 
