@@ -7,8 +7,8 @@
 }
 
 body{
-    background: url("images/Flying_Dutchman.jpg") no-repeat center center fixed;
-    background-color: #adb9a1;
+    background: url("images/segelEdit.JPG") no-repeat center center fixed;
+    background-color: #fbfcff;
     background-repeat: no-repeat;
     max-width: 95%;
     max-height: 95%;
@@ -17,7 +17,7 @@ body{
 }
 
 header{
-    background-color:black;
+    background-color: dimgray;
     color:white;
     text-align:center;
     padding:5px;
@@ -34,14 +34,38 @@ header{
 }
 
 .crossButton{
-    background-color: inherit;
+    background-color: whitesmoke;
     color: red;
 }
 
 .countField{
     width: 15px;
-    background-color: inherit;
+    background-color: whitesmoke;
 }
+
+#blinkDragText{
+    color: black;
+    font-size: large;
+    font-weight: bolder;
+    margin-left: 450px;
+    margin-top: 5px;
+    float: left;
+    animation-duration: 3s;
+    animation-name: blink;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+}
+@keyframes blink {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+
 
 #beerTable{
     border: 1.5px solid black;
@@ -87,11 +111,10 @@ header{
 }
 
 #basket{
-    border: 1.5px solid black;
-    background-color: #c0c0b8;
+
     width: 250px;
-    margin-left: 35px;
-    margin-top: 15px;
+    margin-left: 400px;
+    margin-top: 5px;
     float: left;
     border-radius: 10px;
     padding: 25px;
@@ -108,4 +131,9 @@ header{
     border-radius: 5px;
     width: 100px;
     margin-left: 25px;
+}
+
+
+#flagButton{
+    width: 30px;
 }
