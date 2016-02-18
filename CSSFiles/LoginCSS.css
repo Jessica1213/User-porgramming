@@ -1,17 +1,16 @@
 body {
 
-    background: url("images/Flying_Dutchman.jpg") no-repeat center center fixed;
+    background: url("images/The_Flying_Dutchman_by_Charles_Temple_Dix.jpg") no-repeat center center fixed;
     background-color: #adb9a1;
-    background-image: url("images/Flying_Dutchman.jpg");
+    background-image: url("images/The_Flying_Dutchman_by_Charles_Temple_Dix.jpg");
     background-repeat: no-repeat;
     max-width: 95%;
     max-height: 95%;
-    background-size: auto;
-    background-position: right;
+    background-size: cover;
 }
 
 header{
-    background-color:black;
+    background-color: dimgray;
     color:white;
     text-align:center;
     padding:5px;
@@ -22,7 +21,7 @@ h1 {
 }
 
 #loginForm{
-    margin: 150px 200px;
+    margin: 120px 100px;
     width: 200px;
 
 }
