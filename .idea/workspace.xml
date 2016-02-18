@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4378080b-c939-4d7b-8f3f-b313b44d9f0c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JavascriptFiles/beermenu.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BeerPage.html" afterPath="$PROJECT_DIR$/BeerPage.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CSSFiles/BeerCSS.css" afterPath="$PROJECT_DIR$/CSSFiles/BeerCSS.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CSSFiles/LoginCSS.css" afterPath="$PROJECT_DIR$/CSSFiles/LoginCSS.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Loginpage.html" afterPath="$PROJECT_DIR$/Loginpage.html" />
     </list>
     <ignored path="User-porgramming.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,12 +26,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Loginpage.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Loginpage.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Loginpage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.875">
-              <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
-              <folding />
+            <state vertical-scroll-proportion="0.17918089">
+              <caret line="7" column="84" selection-start-line="7" selection-start-column="84" selection-end-line="7" selection-end-column="84" />
+              <folding>
+                <element signature="n#style#0;n#input#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -37,17 +42,40 @@
       <file leaf-file-name="BeerPage.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BeerPage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.625">
-              <caret line="9" column="69" selection-start-line="9" selection-start-column="69" selection-end-line="9" selection-end-column="69" />
+            <state vertical-scroll-proportion="-11.875">
+              <caret line="20" column="138" selection-start-line="19" selection-start-column="4" selection-end-line="20" selection-end-column="138" />
+              <folding>
+                <element signature="n#style#0;n#input#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BeerCSS.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CSSFiles/BeerCSS.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-12.541667">
+              <caret line="43" column="1" selection-start-line="35" selection-start-column="0" selection-end-line="43" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="beermenu.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="LoginCSS.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CSSFiles/LoginCSS.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-23.125">
+              <caret line="37" column="1" selection-start-line="37" selection-start-column="1" selection-end-line="37" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="beermenu.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/JavascriptFiles/beermenu.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4180328">
+            <state vertical-scroll-proportion="0.0">
               <caret line="18" column="130" selection-start-line="18" selection-start-column="130" selection-end-line="18" selection-end-column="130" />
               <folding>
                 <marker date="1455823704000" expanded="true" signature="583:764" placeholder="..." />
@@ -74,8 +102,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/BeerPage.html" />
         <option value="$PROJECT_DIR$/JavascriptFiles/beermenu.js" />
+        <option value="$PROJECT_DIR$/BeerPage.html" />
+        <option value="$PROJECT_DIR$/Loginpage.html" />
+        <option value="$PROJECT_DIR$/CSSFiles/BeerCSS.css" />
+        <option value="$PROJECT_DIR$/CSSFiles/LoginCSS.css" />
       </list>
     </option>
   </component>
@@ -274,31 +305,53 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Loginpage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.875">
-          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BeerPage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.625">
-          <caret line="9" column="69" selection-start-line="9" selection-start-column="69" selection-end-line="9" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/JavascriptFiles/beermenu.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4180328">
+        <state vertical-scroll-proportion="0.0">
           <caret line="18" column="130" selection-start-line="18" selection-start-column="130" selection-end-line="18" selection-end-column="130" />
           <folding>
             <marker date="1455823704000" expanded="true" signature="583:764" placeholder="..." />
             <marker date="1455823704000" expanded="true" signature="583:802" placeholder="..." />
             <marker date="1455823704000" expanded="true" signature="583:810" placeholder="..." />
             <marker date="1455823704000" expanded="true" signature="583:812" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BeerPage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.875">
+          <caret line="20" column="138" selection-start-line="19" selection-start-column="4" selection-end-line="20" selection-end-column="138" />
+          <folding>
+            <element signature="n#style#0;n#input#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CSSFiles/BeerCSS.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.541667">
+          <caret line="43" column="1" selection-start-line="35" selection-start-column="0" selection-end-line="43" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CSSFiles/LoginCSS.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-23.125">
+          <caret line="37" column="1" selection-start-line="37" selection-start-column="1" selection-end-line="37" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Loginpage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.17918089">
+          <caret line="7" column="84" selection-start-line="7" selection-start-column="84" selection-end-line="7" selection-end-column="84" />
+          <folding>
+            <element signature="n#style#0;n#input#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
