@@ -25,3 +25,13 @@ h1 {
     width: 200px;
 
 }
+
+.flagbutton {
+    display: inline-block;
+    float: right;
+    color: white;
+    margin: auto;
+    width: 30px;
+    height: 22px;
+    border-radius: 20px 20px 20px 20px;
+}

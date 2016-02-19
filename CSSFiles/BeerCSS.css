@@ -33,6 +33,16 @@ header{
     float: left;
 }
 
+.flagbutton {
+    display: inline-block;
+    float: right;
+    color: white;
+    margin: auto;
+    width: 30px;
+    height: 22px;
+    border-radius: 20px 20px 20px 20px;
+}
+
 .crossButton{
     background-color: whitesmoke;
     color: red;
@@ -134,6 +144,3 @@ header{
 }
 
 
-#flagButton{
-    width: 30px;
-}

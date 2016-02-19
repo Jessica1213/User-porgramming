@@ -5,11 +5,11 @@ function change_lang(lan_index)
     switch(lan_index)
     {
         case 1:
-            document.getElementById('flagButton').setAttribute('src', 'CSSFiles/images/SwedenImage.jpg');
+
             myLangArray = Lang_se;
             break;
         default:
-            document.getElementById('flagButton').setAttribute('src', 'CSSFiles/images/SwedenImage.jpg');
+
             myLangArray = Lang_en;
             break;
     }
