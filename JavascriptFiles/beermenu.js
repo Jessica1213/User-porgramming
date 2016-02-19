@@ -14,11 +14,19 @@ $(function () {
 function getAllMenu(beerlist) {
 
     var temp = "";
+    var count = 0;
     beerlist.forEach(function (currentValue) {
-        temp += '<tr class="menuRow" id="' + currentValue.beer_id + '" onmouseover="mouseOverForDrag()" draggable="true" ondragstart="drag(event)">' +
-            '<td class="beerName"><img src="CSSFiles/images/beer.png" width="10%">' + currentValue.namn + " " + currentValue.namn2 +'</td>'
-            + '<td class="beerPrice">'+ currentValue.pub_price + " SEK" + '</td></tr>';
-        //temp += "<br>";
+        if(count%2 == 0) {
+            temp += '<tr class="menuRowEven" id="' + currentValue.beer_id + '" onmouseover="mouseOverForDrag()" draggable="true" ondragstart="drag(event)">' +
+                '<td class="beerName"><img src="CSSFiles/images/beer.png" width="10%"><span title="' + currentValue.namn2 + '">' + currentValue.namn + '</span>' + '</td>'
+                + '<td class="beerPrice">' + currentValue.pub_price + " SEK" + '</td></tr>';
+        }
+        else {
+            temp += '<tr class="menuRow" id="' + currentValue.beer_id + '" onmouseover="mouseOverForDrag()" draggable="true" ondragstart="drag(event)">' +
+                '<td class="beerName"><img src="CSSFiles/images/beer.png" width="10%"><span title="' + currentValue.namn2 + '">' + currentValue.namn + '</span>' + '</td>'
+                + '<td class="beerPrice">' + currentValue.pub_price + " SEK" + '</td></tr>';
+        }
+        count++;
     });
     return temp;
 

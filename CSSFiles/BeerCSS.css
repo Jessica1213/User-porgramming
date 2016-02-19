@@ -31,17 +31,11 @@ header{
     margin-left: 70px;
     border-radius: 10px;
     float: left;
+    overflow: scroll;
+    height: 470px;
 }
 
-.flagbutton {
-    display: inline-block;
-    float: right;
-    color: white;
-    margin: auto;
-    width: 30px;
-    height: 22px;
-    border-radius: 20px 20px 20px 20px;
-}
+
 
 .crossButton{
     background-color: whitesmoke;
@@ -130,6 +124,12 @@ header{
     padding: 25px;
 }
 
+#FilterAndSearchContainer{
+    border: 0.5px dashed black;
+    width: 150px;
+    float: left;
+}
+
 
 #allergiFilter{
     border: 0.5px dashed black;
@@ -144,3 +144,10 @@ header{
 }
 
 
+#languageflag{
+    display: inline-block;
+    float: right;
+    margin: auto;
+    width: 30px;
+    height: 22px;
+}

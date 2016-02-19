@@ -16,15 +16,17 @@
 
 <header><h2>Flying Dutchman</h2></header>
 
-<div id="languagebar">
-    <input type="button" class="flagbutton" onclick="change_lang(0)" style="background-image: url(CSSFiles/images/UK_Flag.png)">&nbsp;
-    <input type="button" class="flagbutton" onclick="change_lang(1)" style="background-image: url(CSSFiles/images/Sweden_Flag.png)">&nbsp;
+<div id="languageflag">
+    <input type="image" id="flagbutton" onclick="change_lang()" src="CSSFiles/images/UK_flag.png">&nbsp;
 </div>
-<div id="allergiFilter">
-    <input type="checkbox" name="glutenAllergi" value="gluten"><span id="glutenAllergi"></span><br>
-    <input type="checkbox" name="lactoseAllergi" value="lactose"><span id="lactoseAllergi"></span><br>
-    <input type="checkbox" name="nutAllergi" value="nut"><span id="nutAllergi"></span><br>
-    <input type="button" id="filterButton" name="filter" value="filter">
+<div id="FilterAndSearchContainer">
+    <div id="allergiFilter">
+        <input type="checkbox" name="glutenAllergi" value="gluten"><span id="glutenAllergi"></span><br>
+        <input type="checkbox" name="lactoseAllergi" value="lactose"><span id="lactoseAllergi"></span><br>
+        <input type="checkbox" name="nutAllergi" value="nut"><span id="nutAllergi"></span><br>
+        <input type="button" id="filterButton" name="filter" value="filter">
+    </div>
+
 </div>
 <div class="beer">
     <table id = "beerTable">
@@ -77,6 +79,5 @@
 </div>
 -->
 
-<script>change_lang(0)</script>
 </body>
 </html>
