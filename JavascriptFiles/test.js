@@ -14,7 +14,7 @@ function f1(){
         var arr = JSON.parse(response);
         var i;
         var out = "<table>";
-alert(arr[0].Name);
+        alert(arr[0].Name);
         for(i = 0; i < arr.length; i++) {
             out += "<tr><td>" +
                 arr[i].Name +
