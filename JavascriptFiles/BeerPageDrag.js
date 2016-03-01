@@ -2,7 +2,8 @@
  * Created by MA on 2/10/2016.
  */
 
-
+var id = 1;
+var draggedCount = 0;
 function allowDrop(ev) {
     ev.preventDefault();
 }
@@ -16,23 +17,88 @@ function drop(ev) {
     ev.preventDefault();
     //var li = document.createElement("li");
     var data = ev.dataTransfer.getData("text");
-    var s = "<tr height='30px'><td class='removeCross' width='15px'><button class='crossButton' onclick='removeItem(this)'>X</button></td>";
 
-    $(document.getElementById(data)).find('td').each(function(){
-        s = s + "<td width='120px'>" + $(this).text() + "</td>";
-    });
-    s = s + "<td><input type='text' class='countField' value='1'></td>";
-    s = s + "</tr>"
-    $("#basketList").append(s);
-   // var cross = document.createTextNode("X");
-   // li.appendChild(cross);
-    //li.appendChild(document.getElementById(data));
-    //document.getElementById("basket").appendChild(li);
-   // ev.target.appendChild(s);
+
+    var basketTable = document.getElementById("basketList");
+    var ind = 0;
+    for(ind=0; ind<draggedCount; ind++){
+        var rows = basketTable.getElementsByTagName("tr")[ind];
+
+        var rowIndex = rows.getElementsByTagName("td")[1];
+        alert(rowIndex);
+        if(rowIndex == document.getElementById(data).rowIndex){
+            rows.getElementsByClassName('countField')[0].value = rows.getElementsByClassName('countField')[0].value + 1;
+            changeSum();
+            break;
+        }//end if
+    }
+
+    if(ind == draggedCount){
+        var s = '<tr id="' + id + '" height="30px"><td class="removeCross" width="15px"><button class="crossButton" onclick="removeItem(this)">X</button></td>';
+        s = s + '<td style="display:none;">' + document.getElementById(data).rowIndex + '</td>';
+        i = 1;
+        $(document.getElementById(data)).find('td').each(function(){
+            if(i == 1) {
+                s = s + '<td class= "chosenBeerName" width="120px">' + $(this).text() + '</td>';
+                i++;
+            }else if(i==2){
+                s = s + '<td class= "chosenBeerPrice" width="120px">' + $(this).text()+ '</td>';
+            }
+        });
+        s = s + '<td><input type="text" class="countField" onchange="changeSum()" value="1"></td>';
+        s = s + '</tr>';
+        $("#basketList").append(s);
+        id=id+1;
+        // var cross = document.createTextNode("X");
+        // li.appendChild(cross);
+        //li.appendChild(document.getElementById(data));
+        //document.getElementById("basket").appendChild(li);
+        // ev.target.appendChild(s);
+        draggedCount = draggedCount + 1;
+        changeSum();
+    }//end if
+
+
+
+
+
 
 }
 
+function changeSum(){
+    var sum = 0;
 
+    var basketTable = document.getElementById("basketList");
+
+    for(ind=0; ind<draggedCount; ind++){
+        var rows = basketTable.getElementsByTagName("tr")[ind];
+
+        var cellsPrice = rows.getElementsByTagName("td")[3];
+        //alert(cellsPrice.textContent);
+        var p = cellsPrice.textContent;
+        var pInt = parseInt(p);
+        //alert(pInt);
+        //var cellsCount = rows.getElementsByTagName("td")[3];
+        //alert(rows.getElementsByClassName('countField')[0].value);
+        var c = rows.getElementsByClassName('countField')[0].value;
+        var cInt = parseInt(c);
+        //alert(cInt);
+        var mul = pInt * cInt;
+        sum += mul;
+    }
+
+    document.getElementById('sum').value = sum;
+    /*
+        var p = $(this).find('.chosenBeerPrice').text();
+        var pInt = parseInt(p);
+        alert(p);
+        var c = $(this).find('.countField').val();
+        var cInt = parseInt(c);
+        alert(cInt);
+        var mul = pInt * cInt;
+
+        sum += mul;*/
+}
 function mouseOverForDrag(){//???????????????? How can I put this code by default, not whenever it goes over a row
     var menuRow = document.getElementsByClassName("menuRow");
     var menuRowLength = document.getElementsByClassName("menuRow").length;
@@ -52,6 +118,8 @@ function mouseOverForDrag(){//???????????????? How can I put this code by defaul
 
 function removeItem(x){
     $(x).parent().parent().remove();
+    draggedCount = draggedCount - 1;
+    changeSum();
 }
 
 

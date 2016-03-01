@@ -37,7 +37,7 @@ Lang_en[2] = "Log in";
 
 //Swedish
 Lang_se = new Array();
-Lang_se[0] = "Välkomna till The Flying Dutchman";
+Lang_se[0] = "Välkommen till The Flying Dutchman";
 Lang_se[1] = "Logga in";
 Lang_se[2] = "Logga in";
 

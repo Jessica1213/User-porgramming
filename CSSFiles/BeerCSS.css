@@ -51,8 +51,8 @@ header{
     color: black;
     font-size: large;
     font-weight: bolder;
-    margin-left: 450px;
-    margin-top: 5px;
+    margin-left: 300px;
+    margin-top: 60px;
     float: left;
     animation-duration: 3s;
     animation-name: blink;
@@ -113,15 +113,44 @@ header{
     font-size: medium;
     position: absolute;
 }
-
+#basketPackage{
+    width: 400px;
+    margin-left: 250px;
+    margin-top: 5px;
+    float: left;
+}
 #basket{
 
-    width: 250px;
-    margin-left: 400px;
+    width: 350px;
+    margin-left: 20px;
     margin-top: 5px;
     float: left;
     border-radius: 10px;
     padding: 25px;
+    overflow-x: auto;
+    overflow-y: scroll;
+    max-height: 100px;
+}
+
+#totalField{
+    margin-left: 300px;
+    margin-top: 5px;
+}
+
+#sum{
+     width: 50px;
+    font-weight: bold;
+}
+
+#totalPara{
+    font-weight: bold;
+}
+
+#continueButton{
+    background-color: azure;
+    font-weight: bold;
+    border-radius: 10px;
+    width: 100px;
 }
 
 #FilterAndSearchContainer{
@@ -151,3 +180,4 @@ header{
     width: 30px;
     height: 22px;
 }
+
