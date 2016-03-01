@@ -21,64 +21,34 @@
 </div>
 <div id="FilterAndSearchContainer">
     <div id="allergiFilter">
-        <input type="checkbox" name="glutenAllergi" value="gluten"><span id="glutenAllergi"></span><br>
-        <input type="checkbox" name="lactoseAllergi" value="lactose"><span id="lactoseAllergi"></span><br>
-        <input type="checkbox" name="nutAllergi" value="nut"><span id="nutAllergi"></span><br>
-        <input type="button" id="filterButton" name="filter" value="filter">
+        <input type="checkbox" id="gulten" name="glutenAllergi" value="gluten"><span id="glutenAllergi"></span><br>
+        <input type="checkbox" id="lactose" name="lactoseAllergi" value="lactose"><span id="lactoseAllergi"></span><br>
+        <input type="checkbox" id="nut" name="nutAllergi" value="nut"><span id="nutAllergi"></span><br>
+        <input type="button" id="filterButton" name="filter" value="filter" onclick="filter()">
     </div>
+    <div id="AdvancedSearch">
+        <div id="priceFilter">
 
+        </div>
+        <div id="nameSeache">
+
+        </div>
+    </div>
 </div>
 <div class="beer">
     <table id = "beerTable">
-        <!--<tr class="menuRow" id="beer1" onmouseover="mouseOverForDrag()" draggable="true" ondragstart="drag(event)">-->
-            <!--<td class="beerName"><span title="Infooooooo">BEER1</span></td>-->
-            <!--<td class="beerPrice">80 SEK</td>-->
-        <!--</tr>-->
 
-        <!--<tr class="menuRowEven" id="beer2" draggable="true" ondragstart="drag(event)">&lt;!&ndash;TODO: onmouseover, infoooo&ndash;&gt;-->
-            <!--<td class="beerName">BEER2</td>-->
-            <!--<td class="beerPrice">80 SEK</td>-->
-        <!--</tr>-->
-
-        <!--<tr class="menuRow" id="beer3" draggable="true" ondragstart="drag(event)">&lt;!&ndash;TODO: onmouseover, infoooo&ndash;&gt;-->
-            <!--<td class="beerName">BEER3</td>-->
-            <!--<td class="beerPrice">80 SEK</td>-->
-        <!--</tr>-->
-        <!--<tr class="menuRowEven" id="beer4" draggable="true" ondragstart="drag(event)">-->
-            <!--<td class="beerName">BEER4</td>-->
-            <!--<td class="beerPrice">80 SEK</td>-->
-        <!--</tr>-->
-        <!--<tr class="menuRow" id="beer5" draggable="true" ondragstart="drag(event)">-->
-            <!--<td class="beerName">BEER5</td>-->
-            <!--<td class="beerPrice">80 SEK</td>-->
-        <!--</tr>-->
     </table>
 </div>
 
 <div id="images"></div>
-<!--
-<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
-    <img src="img_w3slogo.gif" draggable="true" ondragstart="drag(event)" id="drag1" width="88" height="31">
-</div>
--->
 
 <div id="blinkDragText">Drag your items below</div>
 <div id="basket" ondrop="drop(event)" ondragover="allowDrop(event)">
     <table id = "basketList"></table>
 </div>
 
-<!-- beer1
-<div class="beer" >
-    <img class="beerImage" src="" alt="" />
-    <p class="beerInfo">InfO:</p>
-    <p class="beerPrice">80 SEK</p>
-</div>
-<div class="beer" >
-    <img class="beerImage" src="" alt="" />
-    <p class="beerInfo">InfO:</p>
-    <p class="beerPrice">80 SEK</p>
-</div>
--->
+
 
 </body>
 </html>
