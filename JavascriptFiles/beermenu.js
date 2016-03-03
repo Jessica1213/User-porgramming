@@ -9,7 +9,6 @@ function buildMenu(tmp, beer_id, name, name2, price, allergy, counter){
             '<td class="beerName"><img src="CSSFiles/images/beer.png" width="10%"><span title="' + name2 + '">' + name + '</span>' + '</td>'
             + '<td class="beerPrice">' + price + " SEK" + '</td></tr>';
     }
-    console.log(name+" "+allergy);
     $(tmp).appendTo("#beerTable");
 }
 
@@ -85,7 +84,7 @@ function filter() {
     });
 }
 
-function search(searchString) {
+function Namesearch(searchString) {
     searchString = searchString.toLowerCase();
     document.getElementById('beerTable').innerHTML = "";
 
@@ -98,7 +97,30 @@ function search(searchString) {
         var count = results.length;
         for(var i = 0; i<count; i++) {
             var tmp = "";
-            buildMenu(tmp, results[i].beer_id, results[i].namn, results[i].namn2, results[i].price, results[i].allergy, i);
+            buildMenu(tmp, results[i].beer_id, results[i].namn, results[i].namn2, results[i].pub_price, results[i].allergy, i);
+            $(tmp).appendTo("#beerTable");
+        }
+
+    });
+
+}
+
+function  Pricesearch(lowestPrice, highestPrice) {
+    if(lowestPrice=="") lowestPrice=0;
+    if(highestPrice=="") highestPrice=10000;
+    document.getElementById('beerTable').innerHTML="";
+
+    $.getJSON("Database/Database_Beer.json", function(json) {
+
+        var results = $.map(json, function(entry) {
+            var match = (entry.pub_price <= highestPrice && entry.pub_price >= lowestPrice)
+            return match ? entry : null;
+        });
+        var count = results.length;
+        for(var i = 0; i<count; i++) {
+            var tmp = "";
+            buildMenu(tmp, results[i].beer_id, results[i].namn, results[i].namn2, results[i].pub_price, results[i].allergy, i);
+            console.log(tmp);
             $(tmp).appendTo("#beerTable");
         }
 

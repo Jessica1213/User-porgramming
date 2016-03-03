@@ -24,8 +24,8 @@ header{
 }
 
 .beer{
-    border: 1.5px solid black;
-    background-color: lightgray;
+    /*border: 1.5px solid black;*/
+    /*background-color: lightgray;*/
     width: 250px;
     margin-top: 15px;
     margin-left: 70px;
@@ -72,7 +72,7 @@ header{
 
 
 #beerTable{
-    border: 1.5px solid black;
+    border: 2px solid black;
     border-radius: 10px;
 
 }
@@ -86,12 +86,14 @@ header{
 }
 
 .menuRow{
-   height: 30px;
-   background-color: darkgray;
+    height: 30px;
+    border: 3px solid black;
+    background-color: darkgray;
 }
 
 .menuRowEven{
     height: 30px;
+    border: 3px solid black;
     background-color: lightslategray;
 }
 
@@ -125,7 +127,7 @@ header{
 }
 
 #FilterAndSearchContainer{
-    border: 0.5px dashed black;
+
     width: 180px;
     float: left;
 }
@@ -133,16 +135,39 @@ header{
 
 #allergiFilter{
     border: 0.5px dashed black;
-    /*width: 200px;*/
 }
 
+#nameSearch {
+    border: 0.5px dashed black;
+}
+#priceSearch {
+    border: 0.5px dashed black;
+}
+
+#searchfield {
+    width: 100px;
+    margin-left: 15px;
+}
 #filterButton{
     background-color: #c0c0b8;
     border-radius: 5px;
     width: 100px;
-    margin-left: 25px;
+    margin-left: 75px;
 }
 
+#namebutton {
+    background-color: #c0c0b8;
+    border-radius: 5px;
+    width: 100px;
+    margin-left: 75px;
+}
+
+#pricebutton {
+    background-color: #c0c0b8;
+    border-radius: 5px;
+    width: 100px;
+    margin-left: 75px;
+}
 
 #languageflag{
     display: inline-block;

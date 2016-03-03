@@ -28,12 +28,19 @@
     </div>
     <div id="AdvancedSearch">
         <div id="nameSearch">
-            <span id="SearchbyName"></span>&nbsp;&nbsp;<img src="CSSFiles/images/searchicon.png" width="12%">
+            <span id="SearchbyName"></span>
             <input type="text" title="searchfield" id="searchfield" value="" style="width: 60%">
-            <input type="button" value="Search" width="40px" onclick="search($('#searchfield').val())">
+            <input type="button" id="namebutton" value="Search" onclick="Namesearch($('#searchfield').val())">
         </div>
-        <div id="priceFilter">
+        <div id="priceSearch">
             <span id="SearchbyPrice"></span>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span id="lowestPrice"></span>&nbsp;
+            <input type="text" title="searchfield" id="lowprice" value="" style="width:60px">
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span id="highestPrice"></span>
+            <input type="text" title="searchfield" id="highprice" value="" style="width:60px">
+            <input type="button" id="pricebutton" value="Search" onclick="Pricesearch($('#lowprice').val(), $('#highprice').val())">
         </div>
     </div>
 </div>
