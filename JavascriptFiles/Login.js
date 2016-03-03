@@ -14,6 +14,7 @@ $(document).ready(function(){
                 for (i = 0; i < count; i++) {
                     if(json[i].username==username){
                         window.location.href = "BeerPage.html";
+                        localStorage.setItem("user", username);
                         console.log("go");
                         break;
                     }

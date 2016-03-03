@@ -1,6 +1,3 @@
-/**
- * Created by MA on 3/2/2016.
- */
 
 $(function(){
     document.getElementById("usernameLogin").innerHTML = localStorage.getItem("user");
@@ -13,7 +10,24 @@ $(function(){
     }
 });
 
+$(function() {
 
+    $("#accountmanage").hide();
+    $("#account").click(function () {
+        $("#accountmanage").toggle("slow");
+    });
+});
+
+function mouseOverForDrag(){
+    $('#logout').css('cursor', 'hand');
+}
+
+function logout() {
+    localStorage.setItem("user", "");
+    window.location.href = "Loginpage.html";
+
+
+}
 
 function GoToPayment(){
     window.location.href = "Payment.html";
