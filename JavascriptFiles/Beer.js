@@ -5,11 +5,15 @@
 $(function(){
     document.getElementById("usernameLogin").innerHTML = localStorage.getItem("user");
     var basket = sessionStorage.getItem("bask");
+    var basketObj = JSON.parse(basket);
+    //alert("fd");
+    //alert(basketObj[0].price);
 
-    //alert(basket);
-    if(basket === "NaN"){
+    if(basketObj === null){
     }else{
+
         $("#basketList").append(basket);
+
     }
 });
 
