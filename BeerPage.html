@@ -27,11 +27,13 @@
         <input type="button" id="filterButton" name="filter" value="filter" onclick="filter()">
     </div>
     <div id="AdvancedSearch">
-        <div id="priceFilter">
-
+        <div id="nameSearch">
+            <span id="SearchbyName"></span>&nbsp;&nbsp;<img src="CSSFiles/images/searchicon.png" width="12%">
+            <input type="text" title="searchfield" id="searchfield" value="" style="width: 60%">
+            <input type="button" value="Search" width="40px" onclick="search($('#searchfield').val())">
         </div>
-        <div id="nameSeache">
-
+        <div id="priceFilter">
+            <span id="SearchbyPrice"></span>
         </div>
     </div>
 </div>
@@ -43,7 +45,7 @@
 
 <div id="images"></div>
 
-<div id="blinkDragText">Drag your items below</div>
+<div id="blinkDragText"></div>
 <div id="basket" ondrop="drop(event)" ondragover="allowDrop(event)">
     <table id = "basketList"></table>
 </div>
