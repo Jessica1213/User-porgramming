@@ -31,6 +31,9 @@ function change_lang()
     document.getElementById('highestPrice').innerHTML = myLangArray[8];
     $('#namebutton').val(myLangArray[9]);
     $('#pricebutton').val(myLangArray[10]);
+    document.getElementById('welcomeuser').innerHTML = myLangArray[11];
+    document.getElementById('accountsetting').innerHTML = myLangArray[12];
+    document.getElementById('logout').innerHTML = myLangArray[13];
 
 }
 
@@ -48,6 +51,9 @@ Lang_en[7] = "Lowest Price";
 Lang_en[8] = "Highest Price";
 Lang_en[9] = "Search"
 Lang_en[10] = "Search";
+Lang_en[11] = "Welcome";
+Lang_en[12] = "Setting";
+Lang_en[13] = "Log out";
 
 //Swedish
 Lang_se = new Array();
@@ -62,3 +68,6 @@ Lang_se[7] = "lägsta pris";
 Lang_se[8] = "högsta pris";
 Lang_se[9] = "Sök";
 Lang_se[10] = "Sök";
+Lang_se[11] = "Välkommen";
+Lang_se[12] = "Inställning";
+Lang_se[13] = "Logga ut";

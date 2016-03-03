@@ -8,6 +8,7 @@
     <script type="text/javascript" src="javascriptfiles/BeerPageDrag.js"></script>
     <script type="text/javascript" src="javascriptfiles/beerpage_language.js"></script>
     <script type="text/javascript" src="javascriptfiles/beermenu.js"></script>
+    <script type="text/javascript" src="javascriptfiles/Beer.js"></script>
     <h4><span id="Beertitle"></span></h4>
 </head>
 
@@ -22,14 +23,23 @@
     <input type="image" id="flagbutton" onclick="change_lang()" src="CSSFiles/images/UK_flag.png">&nbsp;
 
 </div>
-<div id="account"><span id="usernameLogin"></span></div>
+<div id="account">
+    <span id="welcomeuser"></span>&nbsp;
+    <span id="usernameLogin"></span>
+    <br>
+    <div id="accountmanage">
+        <p class="setting" id="accountsetting"></p>
+        <p class="setting" id="logout" onmouseover="mouseOverForDrag()" onclick="logout()"></p>
+    </div>
+
+</div>
 
 
 <div id="FilterAndSearchContainer">
     <div id="allergiFilter">
-        <input type="checkbox" name="glutenAllergi" value="gluten"><span id="glutenAllergi"></span><br>
-        <input type="checkbox" name="lactoseAllergi" value="lactose"><span id="lactoseAllergi"></span><br>
-        <input type="checkbox" name="nutAllergi" value="nut"><span id="nutAllergi"></span><br>
+        <input type="checkbox" id="gulten" name="glutenAllergi" value="gluten"><span id="glutenAllergi"></span><br>
+        <input type="checkbox" id="lactose" name="lactoseAllergi" value="lactose"><span id="lactoseAllergi"></span><br>
+        <input type="checkbox" id="nut" name="nutAllergi" value="nut"><span id="nutAllergi"></span><br>
         <input type="button" id="filterButton" name="filter" value="filter" onclick="filter()">
     </div>
     <div id="AdvancedSearch">

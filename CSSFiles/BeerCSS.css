@@ -212,5 +212,23 @@ header{
 
 #account{
     float: right;
+    cursor: pointer;
+    /*border: 0.5px dashed black;*/
 }
 
+#accountmanage{
+    /*float: right;*/
+    /*position: absolute;*/
+    /*border: 0.5px dashed black;*/
+    background-color: gainsboro;
+    border-radius: 5px;
+    margin-left: 30px;
+
+}
+
+.setting {
+    margin-left: 12px;
+    margin-top: 5px;
+    margin-bottom: 1px;
+    cursor: pointer;
+}
