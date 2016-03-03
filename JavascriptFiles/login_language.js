@@ -20,10 +20,8 @@ function change_lang()
         myLangArray = Lang_se;
     }
     document.getElementById('Welcome').innerHTML = myLangArray[0];
-
     document.getElementById('Login').innerHTML = myLangArray[1];
-
-    document.getElementById('loginButton').innerHTML = myLangArray[2];
+    $('#LoginButton').val(myLangArray[2]);
 
 }
 

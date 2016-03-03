@@ -11,25 +11,26 @@
 
 </head>
 <body>
-<header><h2 id = "Welcome">Welcome to The Flying Dutchman</h2></header>
+<header><h2 id = "Welcome"></h2></header>
 <div id="languageflag">
     <input type="image" id="flagbutton" onclick="change_lang()" src="CSSFiles/images/UK_flag.png">&nbsp;
 </div>
 
 
 <div id="loginForm">
-<p id="id01"><span id="Login"></span></p>
-<form id="LoginPart" name="LoginForm" method="post" onsubmit="validation()">
-    <input type="text" id="username" name="username" value="Username" onfocus="this.value=''"><br>
-    <input type="text" id="password" name="password" value="Password" onfocus="this.value=''"><br>
-    <button type="submit" id="loginButton">Log in</button>
-</form>
+    <p id="id01"><span id="Login"></span></p>
+    <form id="LoginPart" name="LoginForm" method="post" >
+        <input type="text" id="username" name="username" placeholder="username" onfocus="this.value=''" required><br>
+        <input type="password" id="password" name="password" placeholder="password" onfocus="this.value=''" required><br>
+        <input type="submit" id="LoginButton" value="">
+    </form>
+
 
 </div>
 
 
+<!--onsubmit="validation($.('#username').val(), $.('#password').val())"-->
+
 
 </body>
 </html>
-
-
