@@ -1,4 +1,10 @@
-function f1(){
+var valid = false;
+var usernameAndPasswordArray = new Array;
+var firstNameArray = new Array;
+var lastNameArray = new Array;
+var assetsArray = new Array;
+
+function isValid() {
 
     //validation
 
@@ -11,37 +17,114 @@ function f1(){
 
     if(userElem.value == "" || passElem.value == "" || userElem.value == defUser || passElem.value == defPass){
         alert("username and password must be filled out");
-        return;
+        valid = false;
     }
 
 
 
 
+    $.getJSON("Database/Database_User.json", function (json) {
 
-    var xmlhttp = new XMLHttpRequest();
+        var count = json.length;
+        var i;
+        for (i = 0; i < count; i++) {
+            var usernameAndPassword = json[i].username;
+            var firstName = json[i].first_name;
+            var lastName = json[i].last_name;
+            var assets = json[i].assets;
+
+            if(userElem.value == usernameAndPassword && passElem.value == usernameAndPassword){
+                valid = true;
+                break;
+            }
 
 
-    var linku =  "http://pub.jamaica-inn.net/fpdb/api.php?";
-    linku += "username=" + userElem.value + "&password=" + passElem.value;
-    linku += "&action=iou_get";
-    var url = linku;
+        }//end for
 
-    xmlhttp.onreadystatechange=function() {
-        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            myFunction(xmlhttp.responseText);
+
+        if(i==count){
+            alert("username or password is not correct...");
+            valid = false;
+            }
+
+        console.log(valid);
+        if(valid==true){
+            document.getElementById("LoginPart").action = "BeerPage.html";
+            //alert(document.getElementById("LoginPart").action);
         }
-    }
-    
-    xmlhttp.open("GET", url, true);
-    xmlhttp.send();
+
+    });
+
+    document.getElementById("LoginPart").action = "BeerPage.html";
+
+
+
+    /*var xmlhttp = new XMLHttpRequest();
+
+
+     var linku =  "http://pub.jamaica-inn.net/fpdb/api.php?";
+     linku += "username=" + userElem.value + "&password=" + passElem.value;
+     linku += "&action=iou_get";
+     var url = linku;
+
+     xmlhttp.onreadystatechange=function() {
+     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+     myFunction(xmlhttp.responseText);
+     }
+     }
+
+     xmlhttp.open("GET", url, true);
+     xmlhttp.send();*/
+
+
+
+
+
+
+
+    /* var arr = JSON.parse(response);
+     var i;
+     var out = "";
+     alert(arr.payload[0].first_name);
+
+     out += arr.type;
+
+     document.getElementById("id01").innerHTML = out;*/
 }
-function myFunction(response) {
-    var arr = JSON.parse(response);
-    var i;
-    var out = "";
-alert(arr.payload[0].first_name);
 
-        out += arr.type;
 
-    document.getElementById("id01").innerHTML = out;
+
+
+
+
+function validation(){
+    var count;
+
+    document.getElementById("LoginPart").action = "BeerPage.html";
+
+    var userElem = document.getElementById("username");
+    var passElem = document.getElementById("password");
+
+    localStorage.setItem("user", userElem.value);
+
+
+
+    /*jQuery.getJSON("Database/Database_User.json", function (json) {
+        count = json.length;
+
+        var i;
+        for (i = 0; i < count; i++) {
+            usernameAndPasswordArray[i] = json[i].username;
+            firstNameArray[i] = json[i].first_name;
+            lastNameArray[i] = json[i].last_name;
+            assetsArray[i] = json[i].assets;
+
+        }//end for
+
+
+    });
+
+alert(count);*/
+
+
 }

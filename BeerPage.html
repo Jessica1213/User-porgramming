@@ -8,24 +8,32 @@
     <script type="text/javascript" src="javascriptfiles/BeerPageDrag.js"></script>
     <script type="text/javascript" src="javascriptfiles/beerpage_language.js"></script>
     <script type="text/javascript" src="javascriptfiles/beermenu.js"></script>
+    <script type="text/javascript" src="javascriptfiles/Beer.js"></script>
     <h4><span id="Beertitle"></span></h4>
 </head>
 
 <body>
 
 
-<header><h2>Flying Dutchman</h2></header>
+<header><h2 id="title">Flying Dutchman</h2>
+
+</header>
 
 <div id="languageflag">
     <input type="image" id="flagbutton" onclick="change_lang()" src="CSSFiles/images/UK_flag.png">&nbsp;
+
 </div>
+<div id="account"><span id="usernameLogin"></span></div>
+
+
 <div id="FilterAndSearchContainer">
     <div id="allergiFilter">
         <input type="checkbox" name="glutenAllergi" value="gluten"><span id="glutenAllergi"></span><br>
         <input type="checkbox" name="lactoseAllergi" value="lactose"><span id="lactoseAllergi"></span><br>
         <input type="checkbox" name="nutAllergi" value="nut"><span id="nutAllergi"></span><br>
-        <input type="button" id="filterButton" name="filter" value="filter">
+        <input type="button" id="filterButton" name="filter" value="filter" onclick="filter()">
     </div>
+
 
 </div>
 <div class="beer">
@@ -68,7 +76,7 @@
 </div>
 <div id="totalField">
     <p id="totalPara">Total: <input type="number" id="sum" value="0"></p>
-    <button id="continueButton" onclick="">Continue</button>
+    <button id="continueButton" onclick="GoToPayment()">Pay</button>
 </div>
 </div>
 

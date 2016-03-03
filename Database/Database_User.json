@@ -1,6 +1,4 @@
-{
-  "type": "iou_get_all",
-  "payload": [
+[
     {
       "username": "ankov",
       "first_name": "�ngela",
@@ -404,4 +402,3 @@
       "assets": "999995"
     }
   ]
-}

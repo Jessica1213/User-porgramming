@@ -6,6 +6,7 @@
     <script type="text/javascript" src="JavascriptFiles/Library/jquery-1.12.0.js"></script>
     <script type="text/javascript" src="javascriptfiles/Login.js"></script>
     <script type="text/javascript" src="javascriptfiles/login_language.js"></script>
+    <script type="text/javascript" src="Database/Database_User.json"></script>
     <title>Flying Dutchman</title>
 
 </head>
@@ -18,11 +19,12 @@
 
 <div id="loginForm">
 <p id="id01"><span id="Login"></span></p>
-<form name="LoginForm" action="">
+<form id="LoginPart" name="LoginForm" method="post" onsubmit="validation()">
     <input type="text" id="username" name="username" value="Username" onfocus="this.value=''"><br>
     <input type="text" id="password" name="password" value="Password" onfocus="this.value=''"><br>
+    <button type="submit" id="loginButton">Log in</button>
 </form>
-<button id="loginButton" onclick="f1()">Log in</button>
+
 </div>
 
 

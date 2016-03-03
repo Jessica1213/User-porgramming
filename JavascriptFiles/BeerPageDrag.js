@@ -1,6 +1,7 @@
 /**
  * Created by MA on 2/10/2016.
  */
+var basketTextForPush;
 
 var id = 1;
 var draggedCount = 0;
@@ -14,6 +15,7 @@ function drag(ev) {
 }
 
 function drop(ev) {
+
     ev.preventDefault();
     //var li = document.createElement("li");
     var data = ev.dataTransfer.getData("text");
@@ -25,9 +27,9 @@ function drop(ev) {
         var rows = basketTable.getElementsByTagName("tr")[ind];
 
         var rowIndex = rows.getElementsByTagName("td")[1];
-        alert(rowIndex);
-        if(rowIndex == document.getElementById(data).rowIndex){
-            rows.getElementsByClassName('countField')[0].value = rows.getElementsByClassName('countField')[0].value + 1;
+        if(rowIndex.textContent == document.getElementById(data).rowIndex){
+            var countField = parseInt(rows.getElementsByClassName('countField')[0].value);
+            rows.getElementsByClassName('countField')[0].value = countField + 1;
             changeSum();
             break;
         }//end if
@@ -59,13 +61,13 @@ function drop(ev) {
     }//end if
 
 
-
-
-
+    basketTextForPush += s;
+    sessionStorage.setItem("bask",basketTextForPush);
 
 }
 
 function changeSum(){
+
     var sum = 0;
 
     var basketTable = document.getElementById("basketList");
@@ -86,8 +88,9 @@ function changeSum(){
         var mul = pInt * cInt;
         sum += mul;
     }
-
+    //$(sum).appendTo("#sum");
     document.getElementById('sum').value = sum;
+    sessionStorage.setItem("total",sum);
     /*
         var p = $(this).find('.chosenBeerPrice').text();
         var pInt = parseInt(p);

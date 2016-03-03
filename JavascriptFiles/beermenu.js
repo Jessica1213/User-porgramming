@@ -24,6 +24,7 @@ $(function getAllMenu() {
                     + '<td class="beerPrice">' + price + " SEK" + '</td></tr>';
             }
             $(temp).appendTo("#beerTable");
+
         }
 
     });

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flying Dutchman</title>
+    <link rel="stylesheet" href="CSSFiles/PaymentCSS.css">
+    <script type="text/javascript" src="JavascriptFiles/Library/jquery-1.12.0.js"></script>
+    <script type="text/javascript" src="javascriptfiles/payment.js"></script>
+    <script type="text/javascript" src="javascriptfiles/payment_language.js"></script>
+</head>
+<body>
+
+<header><h2 id="title">Flying Dutchman</h2>
+
+</header>
+
+<div id="languageflag">
+    <input type="image" id="flagbutton" onclick="change_lang()" src="CSSFiles/images/UK_flag.png">&nbsp;
+</div>
+<div id="account"><span id="usernameLogin2"></span></div>
+
+
+<div id="PayList">
+    <h3><span id="totalText"></span><span id="totalAmount"></span></h3>
+
+    <div id = "payCards">
+        <input type="radio" name="PayCard" id="MasterCard" value="MasterCard" checked>
+            <img class="payImages" src="CSSFiles/images/master.png"><br>
+        <input type="radio" name="PayCard" id="VisaCard" value="VisaCard">
+            <img class="payImages" src="CSSFiles/images/visa.png"><br>
+        <input type="radio" name="PayCard" id="paypal" value="PayPal">
+            <img class="payImages" src="CSSFiles/images/PayPal.png"><br>
+    </div>
+    <div id="buttons">
+         <button name="BackEdit" id="BackEditButton" onclick="backFunc()">Back and Edit</button>
+         <button name="Pay" id="PayButton" onclick="paymentFunc()">Pay</button>
+    </div>
+
+</div>
+</body>
+</html>
