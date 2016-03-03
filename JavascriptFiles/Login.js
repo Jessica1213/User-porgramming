@@ -97,34 +97,49 @@ function isValid() {
 
 
 
-function validation(){
-    var count;
+function validation(username, password){
 
-    document.getElementById("LoginPart").action = "BeerPage.html";
-
-    var userElem = document.getElementById("username");
-    var passElem = document.getElementById("password");
-
-    localStorage.setItem("user", userElem.value);
+    //var userElem = document.getElementById("username");
+    //var passElem = document.getElementById("password");
+    console.log(username+" "+password);
+    if(username===password) {
 
 
+    }
+    else alert("Username and password doesn't match.");
 
-    /*jQuery.getJSON("Database/Database_User.json", function (json) {
-        count = json.length;
+    //localStorage.setItem("user", userElem.value);
 
-        var i;
-        for (i = 0; i < count; i++) {
-            usernameAndPasswordArray[i] = json[i].username;
-            firstNameArray[i] = json[i].first_name;
-            lastNameArray[i] = json[i].last_name;
-            assetsArray[i] = json[i].assets;
-
-        }//end for
-
-
-    });
-
-alert(count);*/
 
 
 }
+
+$(document).ready(function(){
+    $('#LoginPart').on('submit', function(e){
+        e.preventDefault();
+        var username = $('#username').val();
+        var password = $('#password').val();
+
+        console.log(username+" "+password);
+
+        if(username===password) {
+            $.getJSON("Database/Database_User.json", function (json) {
+                var count = json.length;
+
+                var i;
+                for (i = 0; i < count; i++) {
+                    if(json[i].username==username){
+                        window.location.href = "BeerPage.html";
+                        console.log("go");
+                        break;
+                    }
+
+                }//end for
+
+                if(i===count) alert("Username or password is wrong.");
+
+            });
+        }
+        //else alert("Username and password doesn't match.");
+    });
+});
