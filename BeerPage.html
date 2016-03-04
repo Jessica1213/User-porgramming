@@ -94,7 +94,11 @@
 </div>
 -->
 
-<div id="blinkDragText">Drag your items below</div>
+<div id="blinkDragText"></div>
+<div id="undoRedoButton">
+    <button id="undoBut" class="undoredoClass" onclick="undoFunction()">Undo</button>
+    <button id="redoBut" class="undoredoClass" onclick="redoFunction()">Redo</button>
+</div>
 <div id="basketPackage">
     <div id="basket" ondrop="drop(event)" ondragover="allowDrop(event)">
         <table id = "basketList"></table>

@@ -63,6 +63,22 @@ header{
     animation-direction: alternate;
     animation-timing-function: ease-in-out;
 }
+
+#undoRedoButton{
+
+    margin-top: 40px;
+    margin-left: 90px;
+    float: left;
+
+}
+
+.undoredoClass{
+    background-color: azure;
+    font-weight: bold;
+    border-radius: 10px;
+    width: 50px;
+}
+
 @keyframes blink {
     from {
         opacity: 1;
