@@ -1,5 +1,4 @@
 
-
 $(function() {
 
     $("#accountmanage").hide();
@@ -7,8 +6,6 @@ $(function() {
         $("#accountmanage").toggle("slow");
     });
 });
-
-
 
 function logout() {
     localStorage.removeItem("user");
