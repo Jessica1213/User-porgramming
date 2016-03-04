@@ -1,13 +1,23 @@
+
 function buildMenu(tmp, beer_id, name, name2, price, allergy, counter){
+
+    var infoid = "info"+beer_id;
+    //console.log("infoid: "+infoid);
+    var beerid = beer_id;
+    //console.log("beerid: "+beerid);
+
     if(counter%2==0) {
         tmp += '<tr class="menuRowEven" id="' + beer_id + '" onmouseover="mouseOverForDrag()" draggable="true" ondragstart="drag(event)">' +
-            '<td class="beerName"><img src="CSSFiles/images/beer.png" width="10%"><span title="' + name2 + '">' + name + '</span>' + '</td>'
-            + '<td class="beerPrice">' + price + " SEK" + '</td></tr>';
+            '<td class="beerName" onclick="showinfo('+ beerid +')"><img src="CSSFiles/images/beer.png" width="10%">'+ name +'</td>'+
+            '<td class="beerPrice" onclick="showinfo('+ beerid +')">' + price + " SEK" + '</td></tr>'+
+            '<tr><td class="beerInfo" colspan="2" id="'+infoid+'" style="display: none" >' + "More info." +'<br>'+"Name2: " + name2  + '<br>'+"Allergy: " + allergy  + '<br>'+'</td></tr>';
+
     }
     else {
         tmp += '<tr class="menuRow" id="' + beer_id + '" onmouseover="mouseOverForDrag()" draggable="true" ondragstart="drag(event)">' +
-            '<td class="beerName"><img src="CSSFiles/images/beer.png" width="10%"><span title="' + name2 + '">' + name + '</span>' + '</td>'
-            + '<td class="beerPrice">' + price + " SEK" + '</td></tr>';
+            '<td class="beerName" onclick="showinfo('+ beerid +')"><img src="CSSFiles/images/beer.png" width="10%"><span title="' + name2 + '">' + name + '</span>' + '</td>'+
+            '<td class="beerPrice" onclick="showinfo('+ beerid +')">' + price + " SEK" + '</td></tr>'+
+            '<tr><td class="beerInfo" colspan="2" id="'+infoid+'" style="display: none" >' + "More info." +'<br>'+"Name2: " + name2  + '<br>'+"Allergy: " + allergy  + '<br>'+'</td></tr>';
     }
     $(tmp).appendTo("#beerTable");
 }
@@ -32,6 +42,16 @@ $(function getAllMenu() {
     });
 
 });
+
+function showinfo(beerid) {
+    var beer = "#"+beerid;
+    var info = "#info"+beerid;
+    $(info).hide();
+    $(beer).click(function(event) {
+        $(info).slideToggle("slow");
+        //event.preventDefault();
+    })
+}
 
 function filter() {
     var Gchecked = document.getElementById('gulten').checked;
@@ -82,6 +102,7 @@ function filter() {
         }
 
     });
+    //$('#gulten :checked').removeAttr('checked');
 }
 
 function Namesearch(searchString) {

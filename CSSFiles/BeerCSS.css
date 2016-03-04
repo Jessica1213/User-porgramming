@@ -128,11 +128,10 @@ header{
 }
 
 .beerInfo{
+    margin-left: 5px;
+    background-color: antiquewhite;
+    height: 30px;
 
-
-    width: 150px;
-    font-size: medium;
-    position: absolute;
 }
 #basketPackage{
     width: 400px;
