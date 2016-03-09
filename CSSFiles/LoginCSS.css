@@ -1,8 +1,8 @@
 body {
 
-    background: url("images/The_Flying_Dutchman_by_Charles_Temple_Dix.jpg") no-repeat center center fixed;
+    /*background: url("images/The_Flying_Dutchman_by_Charles_Temple_Dix.jpg") no-repeat center center fixed;*/
     background-color: #adb9a1;
-    background-image: url("images/The_Flying_Dutchman_by_Charles_Temple_Dix.jpg");
+    /*background-image: url("images/The_Flying_Dutchman_by_Charles_Temple_Dix.jpg");*/
     background-repeat: no-repeat;
     max-width: 95%;
     max-height: 95%;
@@ -32,5 +32,11 @@ h1 {
     margin: auto;
     width: 30px;
     height: 22px;
+}
+
+#themeicon{
+    display: inline-block;
+    float: right;
+    margin: auto;
 }
 

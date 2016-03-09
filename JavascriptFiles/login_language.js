@@ -22,6 +22,7 @@ function change_lang()
     document.getElementById('Welcome').innerHTML = myLangArray[0];
     document.getElementById('Login').innerHTML = myLangArray[1];
     $('#LoginButton').val(myLangArray[2]);
+    $('#themebutton').val(myLangArray[3]);
 
 }
 
@@ -31,6 +32,7 @@ Lang_en = new Array();
 Lang_en[0] = "Welcome to The Flying Dutchman";
 Lang_en[1] = "Please login";
 Lang_en[2] = "Log in";
+Lang_en[3] = "Change Theme";
 
 
 //Swedish
@@ -38,4 +40,5 @@ Lang_se = new Array();
 Lang_se[0] = "Välkommen till The Flying Dutchman";
 Lang_se[1] = "Logga in";
 Lang_se[2] = "Logga in";
+Lang_se[3] = "förändring tema";
 

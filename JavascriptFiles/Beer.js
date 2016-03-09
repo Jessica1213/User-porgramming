@@ -9,6 +9,7 @@ $(function() {
 
 function logout() {
     localStorage.removeItem("user");
+    sessionStorage.removeItem("bask");
     window.location.href = "Loginpage.html";
 
 

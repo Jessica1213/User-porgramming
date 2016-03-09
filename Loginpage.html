@@ -6,16 +6,19 @@
     <script type="text/javascript" src="JavascriptFiles/Library/jquery-1.12.0.js"></script>
     <script type="text/javascript" src="javascriptfiles/Login.js"></script>
     <script type="text/javascript" src="javascriptfiles/login_language.js"></script>
+    <script type="text/javascript" src="javascriptfiles/login_theme.js"></script>
     <script type="text/javascript" src="Database/Database_User.json"></script>
     <title>Flying Dutchman</title>
 
 </head>
-<body>
-<header><h2 id = "Welcome"></h2></header>
+<body id="bodybackground">
+<header id="headline"><h2 id = "Welcome"></h2></header>
 <div id="languageflag">
     <input type="image" id="flagbutton" onclick="change_lang()" src="CSSFiles/images/UK_flag.png">&nbsp;
 </div>
-
+<div id="themeicon">
+    <input type="button" id="themebutton" onclick="change_theme()" value="">&nbsp;
+</div>
 
 <div id="loginForm">
     <p id="id01"><span id="Login"></span></p>
@@ -27,9 +30,6 @@
 
 
 </div>
-
-
-<!--onsubmit="validation($.('#username').val(), $.('#password').val())"-->
 
 
 </body>
