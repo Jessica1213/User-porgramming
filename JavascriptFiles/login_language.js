@@ -1,4 +1,4 @@
-var language_status = "EN";
+var language_status = "EN"
 $(function () {
     $("#languageflag").show();
     $(change_lang());
@@ -23,6 +23,7 @@ function change_lang()
     document.getElementById('Login').innerHTML = myLangArray[1];
     $('#LoginButton').val(myLangArray[2]);
     $('#themebutton').val(myLangArray[3]);
+    sessionStorage.setItem("lang",language_status);
 
 }
 

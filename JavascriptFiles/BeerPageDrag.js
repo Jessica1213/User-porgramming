@@ -2,39 +2,22 @@
  * Created by MA on 2/10/2016.
  */
 var items = new Array();
-var orderObj = orderObj || {};
+//var orderObj = orderObj || {};
 var draggedCount;
 
 var orderStack = [];
 var stackTop = 0;
 orderStackLength = 6;
-
-
-orderObj = {
-    execute:function(items){
-
-    },
-    unExecute:function(items){
-
-    },
-    reExecute:function(items){
-
-    }
-
-}
+var undobutton = false;
+var noredo = false;
 
 
 $(function(){
     document.getElementById("usernameLogin").innerHTML = localStorage.getItem("user");
 
-
-
-
     var basket = sessionStorage.getItem("bask");
     var basketObj = JSON.parse(basket);
 
-    //alert("fd");
-    //alert(basketObj[0].price);
 
     if(basketObj === null){
         draggedCount = 0;
@@ -48,24 +31,13 @@ $(function(){
             s = s + '<td style="display:none;">' + 1 + '</td>';
             s = s + '<td class= "chosenBeerName" width="120px">' + items[index].name + '</td>';
             s = s + '<td class= "chosenBeerPrice" width="120px">' + items[index].price + '</td>';
-            /*  $(document.getElementById(data)).find('td').each(function(){
-             if(i == 1) {
-             s = s + '<td class= "chosenBeerName" width="120px">' + $(this).text() + '</td>';
-             i++;
-             }else if(i==2){
-             s = s + '<td class= "chosenBeerPrice" width="120px">' + $(this).text()+ '</td>';
-             }
-             });*/
             s = s + '<td><input type="text" class="countField" onchange="changeCount(this)" value="' + items[index].count + '"></td>';
             s = s + '</tr>';
             completeTable += s;
         }
         $("#basketList").append(completeTable);
-        //$("#basketList").append(basket);
-
     }
 });
-
 
 
 
@@ -83,11 +55,9 @@ function drag(ev) {
 function drop(ev) {
 
     ev.preventDefault();
-    //var li = document.createElement("li");
     var data = ev.dataTransfer.getData("text");
-    addBeer(data);
-
-
+    pushToStack(addBeer(data));
+    buildBasketAndShow(orderStack[stackTop-1]);
 
 }//end drop function
 
@@ -104,92 +74,57 @@ function addBeer(data){
         }
     });
 
-
-
+    var oldItems = [];
+    if(stackTop!=0) {
+        oldItems = orderStack[stackTop-1].slice(0);
+    }
+    if(undobutton==true){
+        var popitem = orderStack.length-stackTop;
+        while(popitem>0) {
+            console.log("pop");
+            orderStack.pop();
+            popitem--;
+        }
+        undobutton=false;
+        noredo = true;
+    }
+    var ind;
+    var newItems = JSON.parse(JSON.stringify(oldItems));
+    var len = newItems.length;
 
     var basketTable = document.getElementById("basketList");
-    var ind = 0;
 
-    for(ind=0; ind<items.length; ind++){
-        var rows = basketTable.getElementsByTagName("tr")[ind];
-
-        var rowIndex = rows.getElementsByTagName("td")[1];
-        if(rowIndex.textContent == document.getElementById(data).rowIndex){
-            var countField = parseInt(rows.getElementsByClassName('countField')[0].value);
-            rows.getElementsByClassName('countField')[0].value = countField + 1;
-            items[items.length].count = countField + 1;
-            changeSum();
+    for(ind=0; ind<len; ind++){
+        if(newItems[ind].name==singleItem.name) {
+            newItems[ind].count++;
+            console.log("same");
             break;
-        }//end if
+        }
     }
 
-    if(ind == items.length){
-        var s = '<tr id="' + id + '" height="30px"><td class="removeCross" width="15px"><button class="crossButton" onclick="removeItem(this)">X</button></td>';
-        s = s + '<td style="display:none;">' + document.getElementById(data).rowIndex + '</td>';
-        i = 1;
-        s = s + '<td class= "chosenBeerName" width="120px">' + singleItem.name + '</td>';
-        s = s + '<td class= "chosenBeerPrice" width="120px">' + singleItem.price + '</td>';
-        /*  $(document.getElementById(data)).find('td').each(function(){
-         if(i == 1) {
-         s = s + '<td class= "chosenBeerName" width="120px">' + $(this).text() + '</td>';
-         i++;
-         }else if(i==2){
-         s = s + '<td class= "chosenBeerPrice" width="120px">' + $(this).text()+ '</td>';
-         }
-         });*/
-        s = s + '<td><input type="text" class="countField" onchange="changeCount(this)" value="1"></td>';
-        s = s + '</tr>';
-        $("#basketList").append(s);
-        items[items.length] = singleItem;
-
-
+    if(ind == len){
+        newItems = oldItems.concat(singleItem);
+        //items[items.length] = singleItem;
         id=id+1;
-        // var cross = document.createTextNode("X");
-        // li.appendChild(cross);
-        //li.appendChild(document.getElementById(data));
-        //document.getElementById("basket").appendChild(li);
-        // ev.target.appendChild(s);
         draggedCount = draggedCount + 1;
-        changeSum();
+        console.log("push");
     }//end if
-
-
-    pushToStack();
-
-    //basketTextForPush += s;
-    //sessionStorage.setItem("bask",basketTextForPush);
     var itemStr = JSON.stringify(items);
     sessionStorage.setItem("bask", itemStr);
+    return newItems;
 }//end addBeer
 
-function pushToStack(){
-
-  /*  for(var i=0;i<stackTop;i++){
-        k = orderStack[i];
-        for(var t=0;t<k.length;t++)
-            alert(k[t].name);
-    }*/
-    alert("stack "+stackTop);
-    if(stackTop<orderStackLength){
-        var tempItems = items.slice(0);
-        //stackTop = orderStack.push(tempItems);
-        orderStack[stackTop]=tempItems;
-        stackTop++;
-
-    }else{
-        orderStack.shift();
-        stackTop--;
-        var tempItems = items.slice(0);
-        //stackTop = orderStack.push(tempItems);
-        orderStack[stackTop]=tempItems;
+function pushToStack(items) {
+    if(orderStack.length<orderStackLength) {
+        orderStack.push(items);
         stackTop++;
     }
-
-    /*for(var i=0;i<stackTop;i++){
-        k = orderStack[i];
-        for(var t=0;t<k.length;t++)
-            alert(k[t].name);
-    }*/
+    else {
+        orderStack.shift();
+        stackTop--;
+        orderStack.push(items);
+        stackTop++;
+    }
 }
 
 function changeCount(c){
@@ -197,93 +132,64 @@ function changeCount(c){
     var temp = c.parentElement.parentNode.childNodes[4];
     var newCount = temp.getElementsByClassName("countField")[0].value;
 
-    for(var i=0; i<items.length; i++){
-        if(items[i].name == name){
-            items[i].count = newCount;
+    var oldItems = orderStack[stackTop-1].slice(0);
+    var newItems = JSON.parse(JSON.stringify(oldItems));
+    var len = newItems.length;
+
+    for(var i=0; i<len; i++){
+        if(newItems[i].name == name){
+            newItems[i].count = newCount;
         }
     }
+    pushToStack(newItems);
+    buildBasketAndShow(newItems);
 
-    pushToStack();
 
     var itemStr = JSON.stringify(items);
     sessionStorage.setItem("bask", itemStr);
 
-    changeSum();
 }
 
 
-function changeSum(){
+function changeSum(tmpitems){
 
     var sum = 0;
-
-    var basketTable = document.getElementById("basketList");
-
-    for(ind=0; ind<items.length; ind++){
-        var rows = basketTable.getElementsByTagName("tr")[ind];
-
-        var cellsPrice = rows.getElementsByTagName("td")[3];
-        //alert(cellsPrice.textContent);
-        var p = cellsPrice.textContent;
+    //console.log("StackTop: " + stackTop);
+    for(var ind=0; ind<tmpitems.length; ind++){
+        var p = tmpitems[ind].price;
+        var cInt = tmpitems[ind].count;
         var pInt = parseInt(p);
-        //alert(pInt);
-        //var cellsCount = rows.getElementsByTagName("td")[3];
-        //alert(rows.getElementsByClassName('countField')[0].value);
-        var c = rows.getElementsByClassName('countField')[0].value;
-        var cInt = parseInt(c);
-        //alert(cInt);
+        //alert(pInt+ " "+cInt);
         var mul = pInt * cInt;
         sum += mul;
     }
-    //$(sum).appendTo("#sum");
     document.getElementById('sum').value = sum;
     sessionStorage.setItem("total",sum);
-    /*
-        var p = $(this).find('.chosenBeerPrice').text();
-        var pInt = parseInt(p);
-        alert(p);
-        var c = $(this).find('.countField').val();
-        var cInt = parseInt(c);
-        alert(cInt);
-        var mul = pInt * cInt;
-
-        sum += mul;*/
 }
-function mouseOverForDrag(){//???????????????? How can I put this code by default, not whenever it goes over a row
-    var menuRow = document.getElementsByClassName("menuRow");
-    var menuRowLength = document.getElementsByClassName("menuRow").length;
-    for (i=0; i<menuRowLength; i++){
-        menuRow[i].style.cursor = "move";
-    }
-
-    var menuRowEven = document.getElementsByClassName("menuRowEven");
-    var menuRowEvenLength = document.getElementsByClassName("menuRowEven").length;
-    for (i=0; i<menuRowEvenLength; i++){
-        menuRowEven[i].style.cursor = "move";
-    }
-
-}
-
 
 
 function removeItem(x){
 
     var name= x.parentElement.parentNode.childNodes[2].textContent;
 
-    for(var i=0; i<items.length; i++){
-        if(items[i].name == name){
-            items.splice(i,1);
+    var oldItems = orderStack[stackTop-1].slice(0);
+    var newItems = JSON.parse(JSON.stringify(oldItems));
+    var len = newItems.length;
+    console.log(len);
+    for(var i=0; i<len; i++){
+        if(newItems[i].name == name){
+            newItems.splice(i,1);
         }
     }
 
-    pushToStack();
-
     $(x).parent().parent().remove();
 
-    var itemStr = JSON.stringify(items);
+    var itemStr = JSON.stringify(newItems);
     sessionStorage.setItem("bask", itemStr);
 
     draggedCount = draggedCount - 1;
-    changeSum();
+    pushToStack(newItems);
+    buildBasketAndShow(newItems);
 }
 
 
@@ -292,43 +198,107 @@ function GoToPayment(){
 }
 
 
-function buildBasketAndShow(){
+function buildBasketAndShow(tmpitems){
     document.getElementById("basketList").innerHTML = "";
-    for(var i= 0;i<items.length;i++){
+    for(var i= 0;i<tmpitems.length;i++){
         var s = '<tr id="' + id + '" height="30px"><td class="removeCross" width="15px"><button class="crossButton" onclick="removeItem(this)">X</button></td>';
         s = s + '<td style="display:none;">' + 1 + '</td>';
-        s = s + '<td class= "chosenBeerName" width="120px">' + items[i].name + '</td>';
-        s = s + '<td class= "chosenBeerPrice" width="120px">' + items[i].price + '</td>';
-        s = s + '<td><input type="text" class="countField" onchange="changeCount(this)" value="' + items[i].count + '"></td>';
+        s = s + '<td class= "chosenBeerName" width="120px">' + tmpitems[i].name + '</td>';
+        s = s + '<td class= "chosenBeerPrice" width="120px">' + tmpitems[i].price + '</td>';
+        s = s + '<td><input type="text" class="countField" onchange="changeCount(this)" value="' + tmpitems[i].count + '"></td>';
         s = s + '</tr>';
         $("#basketList").append(s);
     }
 
+    changeSum(tmpitems);
+    for(var i=0; i<stackTop;i++) {
+        console.log("Step: " + i);
+        for(var j=0; j<orderStack[i].length; j++) {
+            console.log(orderStack[i][j].name + " " +orderStack[i][j].count);
+        }
+
+    }
 }
 
 
 
 function undoFunction(){
-    alert("stack1: " + stackTop);
-    alert("len1: " + items.length);
-    if(stackTop > 0){
-        stackTop--;
-        if(stackTop==0)
-           items = [];
-        else
-           items = orderStack[stackTop-1];
-        buildBasketAndShow();
+    stackTop--;
+    if(stackTop>0) {
+        buildBasketAndShow(orderStack[stackTop-1]);
+        lastundo = orderStack[stackTop-1];
     }
-
-    alert("stack2: " + stackTop);
-    alert("len2: " + items.length);
+    else {
+        step=0;
+        buildBasketAndShow([]);
+    }
+    //console.log("-------step "+step +"--------");
+    undobutton = true;
+    undobeforeredo = true;
 
 }
 
 function redoFunction(){
-    if(stackTop < orderStackLength){
-        items = orderStack[stackTop];
-        stackTop++;
-        buildBasketAndShow();
+
+    if(noredo) {
+        noredo = false;
     }
+    else {
+        stackTop++;
+        if(stackTop<=orderStack.length) {
+            buildBasketAndShow(orderStack[stackTop-1]);
+        }
+        else {
+            stackTop = orderStack.length;
+        }
+    }
+
+}
+
+
+Array.prototype.clone = function() {
+    return this.slice(0);
+}
+
+function deepCopy(obj) {
+    if (typeof obj == 'object') {
+        if (isArray(obj)) {
+            var l = obj.length;
+            var r = new Array(l);
+            for (var i = 0; i < l; i++) {
+                r[i] = deepCopy(obj[i]);
+            }
+            return r;
+        } else {
+            var r = {};
+            r.prototype = obj.prototype;
+            for (var k in obj) {
+                r[k] = deepCopy(obj[k]);
+            }
+            return r;
+        }
+    }
+    return obj;
+}
+
+var ARRAY_PROPS = {
+    length: 'number',
+    sort: 'function',
+    slice: 'function',
+    splice: 'function'
+};
+
+/**
+ * Determining if something is an array in JavaScript
+ * is error-prone at best.
+ */
+function isArray(obj) {
+    if (obj instanceof Array)
+        return true;
+    // Otherwise, guess:
+    for (var k in ARRAY_PROPS) {
+        if (!(k in obj && typeof obj[k] == ARRAY_PROPS[k]))
+            return false;
+    }
+    return true;
 }
