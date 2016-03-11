@@ -7,7 +7,6 @@ var draggedCount;
 
 var orderStack = [];
 var stackTop = 0;
-orderStackLength = 6;
 var undobutton = false;
 var noredo = false;
 
@@ -116,16 +115,8 @@ function addBeer(data){
 }//end addBeer
 
 function pushToStack(items) {
-    if(orderStack.length<orderStackLength) {
         orderStack.push(items);
         stackTop++;
-    }
-    else {
-        orderStack.shift();
-        stackTop--;
-        orderStack.push(items);
-        stackTop++;
-    }
 }
 
 function changeCount(c){
