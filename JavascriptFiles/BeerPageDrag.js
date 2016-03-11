@@ -75,6 +75,7 @@ function addBeer(data){
     });
 
     var oldItems = [];
+    console.log("stackTop: "+ stackTop);
     if(stackTop!=0) {
         oldItems = orderStack[stackTop-1].slice(0);
     }

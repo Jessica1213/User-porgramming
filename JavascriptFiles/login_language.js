@@ -1,6 +1,9 @@
-var language_status = "EN"
+var language_status;
 $(function () {
+    localStorage.removeItem("lang");
     $("#languageflag").show();
+    language_status = "EN";
+    localStorage.setItem("lang", language_status);
     $(change_lang());
 
 });
@@ -9,6 +12,7 @@ $(function () {
 function change_lang()
 {
     var myLangArray;
+    localStorage.setItem("lang",language_status);
     if(language_status=="EN") {
         document.getElementById('flagbutton').setAttribute('src', 'CSSFiles/images/Sweden_Flag.png');
         language_status="SE";
@@ -23,8 +27,6 @@ function change_lang()
     document.getElementById('Login').innerHTML = myLangArray[1];
     $('#LoginButton').val(myLangArray[2]);
     $('#themebutton').val(myLangArray[3]);
-    sessionStorage.setItem("lang",language_status);
-
 }
 
 

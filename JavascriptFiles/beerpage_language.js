@@ -1,6 +1,8 @@
-var language_status = localStorage.getItem("lang") ;
+var language_status = "EN";
 $(function () {
     $("#languageflag").show();
+    language_status = localStorage.getItem("lang") ;
+    console.log(localStorage.getItem("lang"));
     $(change_lang());
 
 });
@@ -9,6 +11,7 @@ $(function () {
 function change_lang()
 {
     var myLangArray;
+    localStorage.setItem("lang",language_status);
     if(language_status=="EN") {
         document.getElementById('flagbutton').setAttribute('src', 'CSSFiles/images/Sweden_Flag.png');
         language_status="SE";
@@ -34,7 +37,8 @@ function change_lang()
     document.getElementById('welcomeuser').innerHTML = myLangArray[11];
     document.getElementById('accountsetting').innerHTML = myLangArray[12];
     document.getElementById('logout').innerHTML = myLangArray[13];
-    sessionStorage.setItem("lang",language_status);
+    document.getElementById('undo').innerHTML = myLangArray[14];
+    document.getElementById('redo').innerHTML = myLangArray[15];
 
 }
 
@@ -55,6 +59,8 @@ Lang_en[10] = "Search";
 Lang_en[11] = "Welcome";
 Lang_en[12] = "Setting";
 Lang_en[13] = "Log out";
+Lang_en[14] = "undo";
+Lang_en[15] = "redo";
 
 //Swedish
 Lang_se = new Array();
@@ -72,3 +78,5 @@ Lang_se[10] = "Sök";
 Lang_se[11] = "Välkommen";
 Lang_se[12] = "Inställning";
 Lang_se[13] = "Logga ut";
+Lang_se[14] = "ångra";
+Lang_se[15] = "göra om";
