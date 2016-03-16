@@ -108,12 +108,14 @@ header{
     height: 30px;
     border: 3px solid black;
     background-color: darkgray;
+    cursor: move;
 }
 
 .menuRowEven{
     height: 30px;
     border: 3px solid black;
     background-color: lightslategray;
+    cursor: move;
 }
 
 

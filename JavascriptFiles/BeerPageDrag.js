@@ -2,7 +2,7 @@
  * Created by MA on 2/10/2016.
  */
 var items = new Array();
-var orderObj = orderObj || {};
+//var orderObj = orderObj || {};
 var draggedCount;
 
 var orderStack = [];
@@ -10,7 +10,7 @@ var stackTop = 0;
 orderStackLength = 6;
 
 
-orderObj = {
+/*orderObj = {
     execute:function(items){
 
     },
@@ -21,7 +21,7 @@ orderObj = {
 
     }
 
-}
+}*/
 
 
 $(function(){
@@ -65,7 +65,6 @@ $(function(){
 
     }
 });
-
 
 
 
@@ -113,8 +112,9 @@ function addBeer(data){
     for(ind=0; ind<items.length; ind++){
         var rows = basketTable.getElementsByTagName("tr")[ind];
 
-        var rowIndex = rows.getElementsByTagName("td")[1];
-        if(rowIndex.textContent == document.getElementById(data).rowIndex){
+        var rowName = rows.getElementsByTagName("td")[2];
+        //alert(rowName.textContent);
+        if(rowName.textContent == singleItem.name){
             var countField = parseInt(rows.getElementsByClassName('countField')[0].value);
             rows.getElementsByClassName('countField')[0].value = countField + 1;
             items[items.length].count = countField + 1;
@@ -164,12 +164,12 @@ function addBeer(data){
 
 function pushToStack(){
 
-  /*  for(var i=0;i<stackTop;i++){
+     /*for(var i=0;i<stackTop;i++){
         k = orderStack[i];
         for(var t=0;t<k.length;t++)
             alert(k[t].name);
     }*/
-    alert("stack "+stackTop);
+    //alert("stack "+stackTop);
     if(stackTop<orderStackLength){
         var tempItems = items.slice(0);
         //stackTop = orderStack.push(tempItems);
@@ -203,7 +203,7 @@ function changeCount(c){
         }
     }
 
-    pushToStack();
+    //pushToStack();
 
     var itemStr = JSON.stringify(items);
     sessionStorage.setItem("bask", itemStr);
@@ -215,6 +215,17 @@ function changeCount(c){
 function changeSum(){
 
     var sum = 0;
+
+    for(ind=0; ind<items.length; ind++){
+        p = items[ind].price;
+        cInt = items[ind].count;
+        var pInt = parseInt(p);
+        //alert(pInt+ " "+cInt);
+        var mul = pInt * cInt;
+        sum += mul;
+    }
+
+    /*var sum = 0;
 
     var basketTable = document.getElementById("basketList");
 
@@ -234,6 +245,7 @@ function changeSum(){
         var mul = pInt * cInt;
         sum += mul;
     }
+    */
     //$(sum).appendTo("#sum");
     document.getElementById('sum').value = sum;
     sessionStorage.setItem("total",sum);
@@ -248,21 +260,6 @@ function changeSum(){
 
         sum += mul;*/
 }
-function mouseOverForDrag(){//???????????????? How can I put this code by default, not whenever it goes over a row
-    var menuRow = document.getElementsByClassName("menuRow");
-    var menuRowLength = document.getElementsByClassName("menuRow").length;
-    for (i=0; i<menuRowLength; i++){
-        menuRow[i].style.cursor = "move";
-    }
-
-    var menuRowEven = document.getElementsByClassName("menuRowEven");
-    var menuRowEvenLength = document.getElementsByClassName("menuRowEven").length;
-    for (i=0; i<menuRowEvenLength; i++){
-        menuRowEven[i].style.cursor = "move";
-    }
-
-}
-
 
 
 function removeItem(x){
@@ -309,8 +306,8 @@ function buildBasketAndShow(){
 
 
 function undoFunction(){
-    alert("stack1: " + stackTop);
-    alert("len1: " + items.length);
+   /* alert("stack1: " + stackTop);
+    alert("len1: " + items.length);*/
     if(stackTop > 0){
         stackTop--;
         if(stackTop==0)
@@ -320,8 +317,8 @@ function undoFunction(){
         buildBasketAndShow();
     }
 
-    alert("stack2: " + stackTop);
-    alert("len2: " + items.length);
+    /*alert("stack2: " + stackTop);
+    alert("len2: " + items.length);*/
 
 }
 
