@@ -7,14 +7,17 @@ function buildMenu(tmp, beer_id, name, name2, price, allergy, counter){
     //console.log("beerid: "+beerid);
 
     if(counter%2==0) {
-        tmp += '<tr class="menuRowEven" id="' + beer_id + '" draggable="true" ondragstart="drag(event)">' +
+        tmp += '<tr class="menuRowEven" id="' + beer_id + '" draggable="true" ondragstart="drag(event)">';
+
+        tmp += '<tr class="menuRowEven" id="' + beer_id + '"draggable="true" ondragstart="drag(event)">' +
             '<td class="beerName" onclick="showinfo('+ beerid +')"><img src="CSSFiles/images/beer.png" width="10%">'+ name +'</td>'+
             '<td class="beerPrice" onclick="showinfo('+ beerid +')">' + price + " SEK" + '</td></tr>'+
             '<tr><td class="beerInfo" colspan="2" id="'+infoid+'" style="display: none" >' + "More info." +'<br>'+"Name2: " + name2  + '<br>'+"Allergy: " + allergy  + '<br>'+'</td></tr>';
 
     }
     else {
-        tmp += '<tr class="menuRow" id="' + beer_id + '" draggable="true" ondragstart="drag(event)">' +
+        tmp += '<tr class="menuRow" id="' + beer_id + '" draggable="true" ondragstart="drag(event)">';
+        tmp += '<tr class="menuRow" id="' + beer_id + '"draggable="true" ondragstart="drag(event)">' +
             '<td class="beerName" onclick="showinfo('+ beerid +')"><img src="CSSFiles/images/beer.png" width="10%"><span title="' + name2 + '">' + name + '</span>' + '</td>'+
             '<td class="beerPrice" onclick="showinfo('+ beerid +')">' + price + " SEK" + '</td></tr>'+
             '<tr><td class="beerInfo" colspan="2" id="'+infoid+'" style="display: none" >' + "More info." +'<br>'+"Name2: " + name2  + '<br>'+"Allergy: " + allergy  + '<br>'+'</td></tr>';
